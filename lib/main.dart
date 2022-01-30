@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_switch/sliding_switch.dart';
+import 'global_theme.dart';
+import 'list_2.5.dart';
+import 'list_view_demo.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyList1());
 }
 
 @override
@@ -36,9 +39,12 @@ class MyApp extends StatelessWidget {
     final _messengerKey = GlobalKey<ScaffoldMessengerState>();
 
     return MaterialApp(
+      theme: globalTheme(),
       scaffoldMessengerKey: _messengerKey,
       home: Scaffold(
-        appBar: AppBar(actions: <Widget>[
+        appBar: AppBar(
+            title: const Text('Кейс 2.5'),
+            actions: <Widget>[
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.watch_later_outlined)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.wine_bar)),
@@ -126,6 +132,8 @@ class MyApp extends StatelessWidget {
               height: 15,
             ),
 
+            Text('Заголовок', style: Theme.of(context).textTheme.headline5),
+
             Container(
               width: 330,
               height: 35,
@@ -210,6 +218,10 @@ class MyApp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(36.0),
                     )))),
           ]), // SizedBox(width: 232, height: 123, child:
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );
